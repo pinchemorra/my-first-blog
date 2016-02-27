@@ -4,16 +4,15 @@
 	<title>holi</title>
 </head>
 <body>
-<div><h1>Esto es un titulo</h1></div>
 <div>
-<h2><a href="">esto es un subtitulo</a></h2>
-<h3>y esto un subsubtitulo</h3>
-<p><em>holaaaaaaaaaa!</em></p>
-<p>it fucking works!!!!!</p><br/></div>
+	<h1><a href="/">Blog de Aleja</h1>
+</div>
+{% for post in posts %}
 <div>
-<p><h2><a href="">este es otro subtitulo</a></h2></p>
-<p>published: 27 feb 2016 14:40</p>
-<p><strong>aca hay mas texto</strong></p>
-<ul><li>primer elemento</li><li>segundo</li><li>tercero</li></ul></div>
+	<p>published: {{post.published_date}}</p>
+	<h1><a href="">{{ post.title }}</a></h1>
+	<p>{{ post.text|linebreaks }}</p>
+</div>
+{% endfor %}
 </body>
 </html>
